@@ -7,30 +7,30 @@ using System.Threading.Tasks;
 
 namespace libCommon.Interfaces
 {
-    public interface ISandPathFollower
+    public interface ISander
     {
         /// <summary>
         /// 执行指定的路径
         /// </summary>
         /// <param name="path">路径</param>
-        public void RunSandPath(Queue<SanderStatusPoint> path);
+        public Task RunSandPath(Queue<SanderStatusPoint> path);
 
         /// <summary>
         /// 暂停执行
         /// </summary>
         /// <exception cref="InvalidOperationException">打磨流程当前不在执行</exception>
-        public void Pause();
+        public Task Pause();
 
         /// <summary>
         /// 继续执行
         /// </summary>
         /// <exception cref="InvalidOperationException">打磨流程没有暂停</exception>
-        public void Resume();
+        public Task Resume();
 
         /// <summary>
         /// 停止执行
         /// </summary>
         /// <exception cref="InvalidOperationException">当前流程不在运行或无法停止</exception>
-        public void Stop();
+        public Task Stop();
     }
 }

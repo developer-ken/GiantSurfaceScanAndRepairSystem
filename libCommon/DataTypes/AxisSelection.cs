@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace libCommon.DataTypes
 {
-    public enum Axis
+    public enum AxisSelection
     {
         X, Y, Z, All, None
     }

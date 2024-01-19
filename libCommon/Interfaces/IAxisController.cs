@@ -11,15 +11,25 @@ namespace libCommon.Interfaces
     public interface IAxisController
     {
         /// <summary>
+        /// 检测装置当前位置
+        /// </summary>
+        public Vector2 DetectorCurrentPosition { get; }
+
+        /// <summary>
+        /// 执行器当前位置
+        /// </summary>
+        public Vector3 ActuatorCurrentPosition { get; }
+
+        /// <summary>
         /// 将检测装置的指定轴回零。检测装置不存在Z轴，对检测装置Z轴回零会触发异常。
         /// </summary>
         /// <exception cref="InvalidOperationException">当对检测装置Z轴回零时触发</exception>
-        public Task HomeDetectorAxis(Axis axis);
+        public Task HomeDetectorAxis(AxisSelection axis);
         
         /// <summary>
         /// 将执行器的指定轴回零
         /// </summary>
-        public Task HomeActuatorAxis(Axis axis);
+        public Task HomeActuatorAxis(AxisSelection axis);
 
         /// <summary>
         /// 全部回零
