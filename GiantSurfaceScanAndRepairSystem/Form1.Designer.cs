@@ -31,13 +31,14 @@
             splitContainer1 = new SplitContainer();
             splitContainer2 = new SplitContainer();
             pictureBox1 = new PictureBox();
+            move_sander = new RadioButton();
+            move_scanner = new RadioButton();
+            button16 = new Button();
             button15 = new Button();
             button13 = new Button();
             button14 = new Button();
             button12 = new Button();
             button11 = new Button();
-            checkBox2 = new CheckBox();
-            checkBox1 = new CheckBox();
             BtnZPlus = new Button();
             BtnZReduce = new Button();
             label1 = new Label();
@@ -55,26 +56,15 @@
             button7 = new Button();
             button6 = new Button();
             label9 = new Label();
-            button3 = new Button();
-            label7 = new Label();
-            numericUpDown1 = new NumericUpDown();
-            label6 = new Label();
-            numericUpDown2 = new NumericUpDown();
-            label5 = new Label();
-            numericUpDown3 = new NumericUpDown();
-            label4 = new Label();
-            label2 = new Label();
-            label3 = new Label();
             groupBox2 = new GroupBox();
             button8 = new Button();
             label8 = new Label();
             button5 = new Button();
             groupBox1 = new GroupBox();
+            button18 = new Button();
+            button17 = new Button();
             button4 = new Button();
             button1 = new Button();
-            button16 = new Button();
-            button17 = new Button();
-            button18 = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -86,9 +76,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)moveamount).BeginInit();
             groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
             groupBox2.SuspendLayout();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -132,14 +119,14 @@
             // splitContainer2.Panel2
             // 
             splitContainer2.Panel2.BackColor = SystemColors.Control;
+            splitContainer2.Panel2.Controls.Add(move_sander);
+            splitContainer2.Panel2.Controls.Add(move_scanner);
             splitContainer2.Panel2.Controls.Add(button16);
             splitContainer2.Panel2.Controls.Add(button15);
             splitContainer2.Panel2.Controls.Add(button13);
             splitContainer2.Panel2.Controls.Add(button14);
             splitContainer2.Panel2.Controls.Add(button12);
             splitContainer2.Panel2.Controls.Add(button11);
-            splitContainer2.Panel2.Controls.Add(checkBox2);
-            splitContainer2.Panel2.Controls.Add(checkBox1);
             splitContainer2.Panel2.Controls.Add(BtnZPlus);
             splitContainer2.Panel2.Controls.Add(BtnZReduce);
             splitContainer2.Panel2.Controls.Add(label1);
@@ -164,6 +151,41 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
+            // move_sander
+            // 
+            move_sander.AutoSize = true;
+            move_sander.Location = new Point(240, 32);
+            move_sander.Name = "move_sander";
+            move_sander.Size = new Size(105, 21);
+            move_sander.TabIndex = 20;
+            move_sander.TabStop = true;
+            move_sander.Text = "操作打磨头 X2";
+            move_sander.UseVisualStyleBackColor = true;
+            // 
+            // move_scanner
+            // 
+            move_scanner.AutoSize = true;
+            move_scanner.Location = new Point(240, 5);
+            move_scanner.Name = "move_scanner";
+            move_scanner.Size = new Size(105, 21);
+            move_scanner.TabIndex = 19;
+            move_scanner.TabStop = true;
+            move_scanner.Text = "操作扫描头 X1";
+            move_scanner.UseVisualStyleBackColor = true;
+            // 
+            // button16
+            // 
+            button16.BackColor = Color.Green;
+            button16.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            button16.ForeColor = Color.White;
+            button16.Location = new Point(92, 72);
+            button16.Name = "button16";
+            button16.Size = new Size(251, 46);
+            button16.TabIndex = 4;
+            button16.Text = "全流程执行";
+            button16.UseVisualStyleBackColor = false;
+            button16.Click += button16_Click;
+            // 
             // button15
             // 
             button15.Location = new Point(11, 66);
@@ -172,6 +194,7 @@
             button15.TabIndex = 18;
             button15.Text = "Z归零";
             button15.UseVisualStyleBackColor = true;
+            button15.Click += button15_Click;
             // 
             // button13
             // 
@@ -181,6 +204,7 @@
             button13.TabIndex = 17;
             button13.Text = "Y2归零";
             button13.UseVisualStyleBackColor = true;
+            button13.Click += button13_Click;
             // 
             // button14
             // 
@@ -190,6 +214,7 @@
             button14.TabIndex = 16;
             button14.Text = "Y1归零";
             button14.UseVisualStyleBackColor = true;
+            button14.Click += button14_Click;
             // 
             // button12
             // 
@@ -199,6 +224,7 @@
             button12.TabIndex = 15;
             button12.Text = "X2归零";
             button12.UseVisualStyleBackColor = true;
+            button12.Click += button12_Click;
             // 
             // button11
             // 
@@ -208,28 +234,7 @@
             button11.TabIndex = 14;
             button11.Text = "X1归零";
             button11.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            checkBox2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(228, 32);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(110, 21);
-            checkBox2.TabIndex = 13;
-            checkBox2.Text = "控制打磨头(X2)";
-            checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            checkBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(228, 5);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(110, 21);
-            checkBox1.TabIndex = 12;
-            checkBox1.Text = "控制扫描头(X1)";
-            checkBox1.UseVisualStyleBackColor = true;
+            button11.Click += button11_Click;
             // 
             // BtnZPlus
             // 
@@ -240,6 +245,7 @@
             BtnZPlus.TabIndex = 11;
             BtnZPlus.Text = "Z+";
             BtnZPlus.UseVisualStyleBackColor = true;
+            BtnZPlus.Click += BtnZPlus_Click;
             // 
             // BtnZReduce
             // 
@@ -250,6 +256,7 @@
             BtnZReduce.TabIndex = 10;
             BtnZReduce.Text = "Z-";
             BtnZReduce.UseVisualStyleBackColor = true;
+            BtnZReduce.Click += BtnZReduce_Click;
             // 
             // label1
             // 
@@ -279,6 +286,7 @@
             BtnXReduce.TabIndex = 4;
             BtnXReduce.Text = "X- ↓";
             BtnXReduce.UseVisualStyleBackColor = true;
+            BtnXReduce.Click += BtnXReduce_Click;
             // 
             // BtnXPlus
             // 
@@ -289,6 +297,7 @@
             BtnXPlus.TabIndex = 3;
             BtnXPlus.Text = "X+ ↑";
             BtnXPlus.UseVisualStyleBackColor = true;
+            BtnXPlus.Click += BtnXPlus_Click;
             // 
             // BtnYReduce
             // 
@@ -299,6 +308,7 @@
             BtnYReduce.TabIndex = 2;
             BtnYReduce.Text = "Y-  ←";
             BtnYReduce.UseVisualStyleBackColor = true;
+            BtnYReduce.Click += BtnYReduce_Click;
             // 
             // BtnYPlus
             // 
@@ -309,6 +319,7 @@
             BtnYPlus.TabIndex = 1;
             BtnYPlus.Text = "Y+  →";
             BtnYPlus.UseVisualStyleBackColor = true;
+            BtnYPlus.Click += BtnYPlus_Click;
             // 
             // button2
             // 
@@ -322,13 +333,14 @@
             button2.TabIndex = 0;
             button2.Text = "电机停止\r\nStop";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // richTextBox1
             // 
             richTextBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            richTextBox1.Location = new Point(3, 476);
+            richTextBox1.Location = new Point(3, 492);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(195, 151);
+            richTextBox1.Size = new Size(195, 135);
             richTextBox1.TabIndex = 3;
             richTextBox1.Text = "";
             // 
@@ -341,19 +353,9 @@
             groupBox3.Controls.Add(button7);
             groupBox3.Controls.Add(button6);
             groupBox3.Controls.Add(label9);
-            groupBox3.Controls.Add(button3);
-            groupBox3.Controls.Add(label7);
-            groupBox3.Controls.Add(numericUpDown1);
-            groupBox3.Controls.Add(label6);
-            groupBox3.Controls.Add(numericUpDown2);
-            groupBox3.Controls.Add(label5);
-            groupBox3.Controls.Add(numericUpDown3);
-            groupBox3.Controls.Add(label4);
-            groupBox3.Controls.Add(label2);
-            groupBox3.Controls.Add(label3);
             groupBox3.Location = new Point(3, 178);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(196, 292);
+            groupBox3.Size = new Size(196, 308);
             groupBox3.TabIndex = 2;
             groupBox3.TabStop = false;
             groupBox3.Text = "3. 打磨修复";
@@ -365,48 +367,52 @@
             listBox1.ItemHeight = 17;
             listBox1.Location = new Point(9, 39);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(179, 72);
+            listBox1.Size = new Size(179, 208);
             listBox1.TabIndex = 24;
             // 
             // button10
             // 
             button10.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button10.Location = new Point(139, 141);
+            button10.Location = new Point(138, 278);
             button10.Name = "button10";
             button10.Size = new Size(49, 23);
             button10.TabIndex = 23;
             button10.Text = "停止";
             button10.UseVisualStyleBackColor = true;
+            button10.Click += button10_Click;
             // 
             // button9
             // 
             button9.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button9.Location = new Point(88, 141);
+            button9.Location = new Point(87, 278);
             button9.Name = "button9";
             button9.Size = new Size(45, 23);
             button9.TabIndex = 22;
             button9.Text = "暂停";
             button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
             // 
             // button7
             // 
             button7.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            button7.Location = new Point(9, 141);
+            button7.Location = new Point(8, 278);
             button7.Name = "button7";
             button7.Size = new Size(73, 23);
             button7.TabIndex = 21;
             button7.Text = "跳过当前";
             button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
             // 
             // button6
             // 
             button6.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            button6.Location = new Point(9, 117);
+            button6.Location = new Point(8, 254);
             button6.Name = "button6";
             button6.Size = new Size(179, 23);
             button6.TabIndex = 20;
             button6.Text = "开始打磨";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
             // 
             // label9
             // 
@@ -417,100 +423,6 @@
             label9.Size = new Size(104, 17);
             label9.TabIndex = 19;
             label9.Text = "没有加载检测结果";
-            // 
-            // button3
-            // 
-            button3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            button3.Location = new Point(11, 257);
-            button3.Name = "button3";
-            button3.Size = new Size(179, 29);
-            button3.TabIndex = 18;
-            button3.Text = "移动打磨机构";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            label7.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            label7.AutoSize = true;
-            label7.Location = new Point(160, 172);
-            label7.Name = "label7";
-            label7.Size = new Size(30, 17);
-            label7.TabIndex = 17;
-            label7.Text = "mm";
-            // 
-            // numericUpDown1
-            // 
-            numericUpDown1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            numericUpDown1.Location = new Point(32, 170);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(122, 23);
-            numericUpDown1.TabIndex = 7;
-            // 
-            // label6
-            // 
-            label6.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            label6.AutoSize = true;
-            label6.Location = new Point(160, 201);
-            label6.Name = "label6";
-            label6.Size = new Size(30, 17);
-            label6.TabIndex = 16;
-            label6.Text = "mm";
-            // 
-            // numericUpDown2
-            // 
-            numericUpDown2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            numericUpDown2.Location = new Point(32, 199);
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(122, 23);
-            numericUpDown2.TabIndex = 8;
-            // 
-            // label5
-            // 
-            label5.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            label5.AutoSize = true;
-            label5.Location = new Point(160, 230);
-            label5.Name = "label5";
-            label5.Size = new Size(30, 17);
-            label5.TabIndex = 15;
-            label5.Text = "mm";
-            // 
-            // numericUpDown3
-            // 
-            numericUpDown3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            numericUpDown3.Location = new Point(32, 228);
-            numericUpDown3.Name = "numericUpDown3";
-            numericUpDown3.Size = new Size(122, 23);
-            numericUpDown3.TabIndex = 9;
-            // 
-            // label4
-            // 
-            label4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            label4.AutoSize = true;
-            label4.Location = new Point(11, 230);
-            label4.Name = "label4";
-            label4.Size = new Size(15, 17);
-            label4.TabIndex = 14;
-            label4.Text = "Z";
-            // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            label2.AutoSize = true;
-            label2.Location = new Point(10, 172);
-            label2.Name = "label2";
-            label2.Size = new Size(16, 17);
-            label2.TabIndex = 12;
-            label2.Text = "X";
-            // 
-            // label3
-            // 
-            label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            label3.AutoSize = true;
-            label3.Location = new Point(10, 201);
-            label3.Name = "label3";
-            label3.Size = new Size(15, 17);
-            label3.TabIndex = 13;
-            label3.Text = "Y";
             // 
             // groupBox2
             // 
@@ -552,6 +464,7 @@
             button5.TabIndex = 1;
             button5.Text = "开始检测";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // groupBox1
             // 
@@ -566,6 +479,26 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "1. 表面扫描";
+            // 
+            // button18
+            // 
+            button18.Location = new Point(87, 51);
+            button18.Name = "button18";
+            button18.Size = new Size(75, 23);
+            button18.TabIndex = 3;
+            button18.Text = "停止";
+            button18.UseVisualStyleBackColor = true;
+            button18.Click += button18_Click;
+            // 
+            // button17
+            // 
+            button17.Location = new Point(6, 51);
+            button17.Name = "button17";
+            button17.Size = new Size(75, 23);
+            button17.TabIndex = 2;
+            button17.Text = "暂停";
+            button17.UseVisualStyleBackColor = true;
+            button17.Click += button17_Click;
             // 
             // button4
             // 
@@ -584,36 +517,7 @@
             button1.TabIndex = 0;
             button1.Text = "开始扫描";
             button1.UseVisualStyleBackColor = true;
-            // 
-            // button16
-            // 
-            button16.BackColor = Color.Green;
-            button16.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            button16.ForeColor = Color.White;
-            button16.Location = new Point(92, 72);
-            button16.Name = "button16";
-            button16.Size = new Size(251, 46);
-            button16.TabIndex = 4;
-            button16.Text = "全流程执行";
-            button16.UseVisualStyleBackColor = false;
-            // 
-            // button17
-            // 
-            button17.Location = new Point(6, 51);
-            button17.Name = "button17";
-            button17.Size = new Size(75, 23);
-            button17.TabIndex = 2;
-            button17.Text = "暂停";
-            button17.UseVisualStyleBackColor = true;
-            // 
-            // button18
-            // 
-            button18.Location = new Point(87, 51);
-            button18.Name = "button18";
-            button18.Size = new Size(75, 23);
-            button18.TabIndex = 3;
-            button18.Text = "停止";
-            button18.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // Form1
             // 
@@ -636,9 +540,6 @@
             ((System.ComponentModel.ISupportInitialize)moveamount).EndInit();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown3).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
             groupBox1.ResumeLayout(false);
@@ -663,19 +564,7 @@
         private Label label1;
         private NumericUpDown moveamount;
         private Button BtnZReduce;
-        private NumericUpDown numericUpDown3;
-        private NumericUpDown numericUpDown2;
-        private NumericUpDown numericUpDown1;
         private Button BtnZPlus;
-        private Label label4;
-        private Label label3;
-        private Label label2;
-        private Label label7;
-        private Label label6;
-        private Label label5;
-        private Button button3;
-        private CheckBox checkBox2;
-        private CheckBox checkBox1;
         private Button button4;
         private Button button5;
         private Label label8;
@@ -694,5 +583,7 @@
         private Button button16;
         private Button button18;
         private Button button17;
+        private RadioButton move_sander;
+        private RadioButton move_scanner;
     }
 }
