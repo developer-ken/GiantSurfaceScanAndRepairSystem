@@ -18,6 +18,7 @@ namespace libCommon.Interfaces
         /// </summary>
         /// <param name="dest">以脉冲数计量的目标位置</param>
         /// <returns></returns>
+        /// <exception cref="Exceptions.CollisionException">电机运行中发生堵转</exception>
         public Task MoveTo(uint dest);
 
         /// <summary>
@@ -31,5 +32,16 @@ namespace libCommon.Interfaces
         /// </summary>
         /// <returns></returns>
         public Task EmergencyStop();
+
+        /// <summary>
+        /// 将电机从堵转保护中恢复
+        /// </summary>
+        /// <returns></returns>
+        public Task FailsafeReset();
+
+        /// <summary>
+        /// 电机堵转保护是否触发
+        /// </summary>
+        public bool IsFailsafeTriggered { get; }
     }
 }

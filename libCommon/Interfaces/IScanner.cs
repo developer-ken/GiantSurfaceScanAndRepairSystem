@@ -11,10 +11,16 @@ namespace libCommon.Interfaces
     public interface IScanner
     {
         /// <summary>
+        /// 是否已被暂停
+        /// </summary>
+        public bool IsPaused { get; }
+
+        /// <summary>
         /// 开始扫描
         /// </summary>
         /// <param name="processUpdateCallback">扫描结果更新回调</param>
         /// <returns>最终扫描结果点云</returns>
+        /// <exception cref="Exceptions.CollisionException">运行中碰撞到物体触发保护</exception>
         public Task<PointCloud> Scan(Action<PointCloud,Vector2> processUpdateCallback);
 
         /// <summary>
